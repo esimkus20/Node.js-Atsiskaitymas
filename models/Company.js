@@ -19,6 +19,7 @@ const companySchema = new mongoose.Schema(
         profileId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "CompanyProfile",
+            required: true,
         },
     },
     { versionKey: false }

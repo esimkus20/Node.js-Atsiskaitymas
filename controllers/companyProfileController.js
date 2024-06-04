@@ -14,10 +14,9 @@ export async function getCompanyProfiles(req, res) {
 // POST a new company profile
 export async function addCompanyProfile(req, res) {
     try {
-        const { companyId, founder, foundedYear, numberOfEmployees } = req.body;
+        const { founder, foundedYear, numberOfEmployees } = req.body;
 
         const newCompanyProfile = new CompanyProfile({
-            companyId,
             founder,
             foundedYear,
             numberOfEmployees,
@@ -46,17 +45,10 @@ export async function updateCompanyProfileById(req, res) {
                 .json({ message: "Company Profile not found" });
         }
 
-        if (founder) {
-            companyProfile.founder = founder;
-        }
-
-        if (foundedYear) {
-            companyProfile.foundedYear = foundedYear;
-        }
-
-        if (numberOfEmployees) {
+        if (founder) companyProfile.founder = founder;
+        if (foundedYear) companyProfile.foundedYear = foundedYear;
+        if (numberOfEmployees)
             companyProfile.numberOfEmployees = numberOfEmployees;
-        }
 
         await companyProfile.save();
 

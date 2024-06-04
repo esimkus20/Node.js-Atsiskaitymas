@@ -1,0 +1,16 @@
+companyProfiles
+
+{
+ "founder": "Founder",
+ "foundedYear": 2024,
+ "numberOfEmployees": 10
+}
+
+companies
+
+{
+ "name": "Name",
+ "industry": "Industry",
+ "location": "Location",
+ "profileId": ""
+}
